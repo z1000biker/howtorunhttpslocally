@@ -8,7 +8,7 @@ Two methods to serve your HTML files with HTTPS for mobile device testing.
 - [Node.js](https://nodejs.org/) installed (LTS version recommended)
 
 ### Installation
-```sh
+
 npm install -g http-server local-ssl-proxy
 Usage
 Place your HTML files in a project folder
@@ -17,11 +17,11 @@ Open terminal in that folder
 
 Start the HTTP server:
 
-sh
+
 http-server -p 80
 In another terminal, start the HTTPS proxy:
 
-sh
+
 local-ssl-proxy --source 443 --target 80
 Accessing Your Files
 Find your local IP address:
@@ -32,31 +32,31 @@ Mac/Linux: ifconfig
 
 On your mobile device (same network), visit:
 
-text
+
 https://<your-local-ip>:443/yourfile.html
 Example: https://192.168.1.100:443/index.html
 
 Method 2: Public HTTPS URL (Cloudflare Tunnel)
 Installation
-sh
+
 npm install -g cloudflared
 Usage
 Run your HTTP server:
 
-sh
+
 http-server -p 80
 In another terminal, start the tunnel:
 
-sh
+
 cloudflared tunnel --url http://localhost:80
 You'll receive a public URL like:
 
-text
+
 https://random-name.trycloudflare.com
 Accessing Your Files
 Append your filename to the URL:
 
-text
+
 https://random-name.trycloudflare.com/yourfile.html
 Troubleshooting
 Certificate Warnings
